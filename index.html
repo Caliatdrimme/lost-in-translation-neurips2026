@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost in Translation, Found in Interdisciplinarity</title>
+<meta name="description" content="A playful evening for anyone curious about language and translation, human and artificial alike. NeurIPS 2026 social, Sydney, Tuesday 8 December, 7:00 to 9:00 PM.">
+<meta property="og:title" content="Lost in Translation, Found in Interdisciplinarity">
+<meta property="og:description" content="A playful evening for anyone curious about language and translation, human and artificial alike. NeurIPS 2026 social, Sydney, 8 December.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+JP:wght@400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #12263f;
+    --paper: #f6f9fb;
+    --card: #ffffff;
+    --lagoon: #067373;
+    --sun: #ffc247;
+    --mist: #d6e2ec;
+    --doodle: #c9d9e6;
+    --faint: #5f7389;
+    --tile-ink: #12263f;
+    --tile-a: #7fd8cf;
+    --tile-b: #ffc247;
+    --tile-c: #ff8f7a;
+    --tile-d: #b9b2ff;
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --text: "Source Serif 4", Georgia, "Times New Roman", serif;
+  }
+  :root:not([data-theme="light"]) { color-scheme: light dark; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e8eff6;
+      --paper: #0e1b2c;
+      --card: #162b45;
+      --lagoon: #5cd0d0;
+      --mist: #243b55;
+      --doodle: #1b3350;
+      --faint: #93a8bd;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #e8eff6;
+    --paper: #0e1b2c;
+    --card: #162b45;
+    --lagoon: #5cd0d0;
+    --mist: #243b55;
+    --doodle: #1b3350;
+    --faint: #93a8bd;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--text);
+    font-size: 1.125rem;
+    line-height: 1.65;
+  }
+
+  /* Game-night doodle backdrop */
+  .bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .bg pattern * {
+    fill: none;
+    stroke: var(--doodle);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .bg pattern text {
+    fill: var(--doodle);
+    stroke: none;
+    font-family: "Bricolage Grotesque", Arial, sans-serif;
+    font-weight: 700;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* Hero */
+  .hero { padding: 3rem 0 1.5rem; }
+  .drift {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    font-family: var(--text), "Noto Sans JP", sans-serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 3.2vw, 1.35rem);
+    line-height: 1.5;
+    color: var(--faint);
+  }
+  .drift li { white-space: nowrap; opacity: 0; animation: surface 0.9s ease forwards; }
+  .drift li:nth-child(1) { margin-left: 0;      --end: 0.30; animation-delay: 0.05s; }
+  .drift li:nth-child(2) { margin-left: 0.9rem; --end: 0.42; animation-delay: 0.2s; }
+  .drift li:nth-child(3) { margin-left: 1.8rem; --end: 0.56; animation-delay: 0.35s; }
+  .drift li:nth-child(4) { margin-left: 2.7rem; --end: 0.72; animation-delay: 0.5s; }
+  .drift li:nth-child(5) { margin-left: 3.6rem; --end: 0.88; animation-delay: 0.65s; }
+  @keyframes surface {
+    from { opacity: 0; transform: translateX(-0.4rem); }
+    to   { opacity: var(--end, 1); transform: none; }
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2.35rem, 8.2vw, 4.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin: 0 0 1.25rem;
+    max-width: 14ch;
+  }
+  .sub {
+    font-size: clamp(1.2rem, 3.4vw, 1.5rem);
+    line-height: 1.4;
+    max-width: 30ch;
+    margin: 0 0 1.75rem;
+  }
+  .when {
+    display: inline-block;
+    background: var(--sun);
+    color: #12263f;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.35;
+    padding: 0.7rem 1rem;
+    border: 2px solid #12263f;
+    border-radius: 0.5rem;
+    box-shadow: 4px 4px 0 var(--lagoon);
+    margin: 0;
+  }
+  .when span { display: block; font-weight: 500; font-size: 0.95rem; }
+
+  /* Trivia card */
+  .trivia-set { display: grid; gap: 1.6rem; margin: 2.25rem 0 0.5rem; }
+  .trivia {
+    margin: 0;
+    max-width: 34rem;
+    background: var(--card);
+    border: 2px solid var(--ink);
+    border-radius: 1rem;
+    padding: 1.25rem 1.25rem 1.1rem 4.1rem;
+    position: relative;
+    box-shadow: 6px 6px 0 var(--lagoon);
+    transform: rotate(-1deg);
+  }
+  .trivia:nth-child(2) { transform: rotate(0.8deg); }
+  .trivia:nth-child(2) .q-mark { background: var(--tile-d); }
+  .trivia details ul { margin: 0.7rem 0 0; padding-left: 1.1rem; font-size: 1.02rem; line-height: 1.45; }
+  .trivia details li { margin-bottom: 0.4rem; }
+  .trivia details p.small { font-size: 0.95rem; color: var(--faint); }
+  .trivia .q-mark {
+    position: absolute;
+    left: 1rem;
+    top: 1.1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: var(--tile-c);
+    color: var(--tile-ink);
+    border: 2px solid var(--ink);
+    display: grid;
+    place-items: center;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+  .trivia p.q {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin: 0 0 0.7rem;
+  }
+  .trivia details { margin: 0; }
+  .trivia summary {
+    display: inline-block;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--tile-ink);
+    background: var(--tile-a);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 0.25rem 0.9rem;
+  }
+  .trivia summary::-webkit-details-marker { display: none; }
+  .trivia details[open] summary { background: var(--sun); }
+  .trivia details p { margin: 0.8rem 0 0; font-size: 1.02rem; line-height: 1.5; }
+
+  /* Sections */
+  main section { padding: 1.75rem 0; }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.75rem;
+  }
+  p { margin: 0 0 1rem; max-width: 38rem; }
+  a { color: var(--lagoon); text-underline-offset: 0.18em; }
+  a:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--sun);
+    outline-offset: 3px;
+  }
+
+  /* Category tiles */
+  .tiles {
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  .tiles li {
+    background: var(--tile);
+    color: var(--tile-ink);
+    border: 2px solid var(--ink);
+    border-radius: 0.9rem;
+    box-shadow: 0 5px 0 var(--ink);
+    padding: 0.85rem 0.9rem 0.95rem;
+  }
+  .tiles li:nth-child(1) { --tile: var(--tile-a); }
+  .tiles li:nth-child(2) { --tile: var(--tile-b); }
+  .tiles li:nth-child(3) { --tile: var(--tile-c); }
+  .tiles li:nth-child(4) { --tile: var(--tile-d); }
+  .tiles li:nth-child(5) { --tile: var(--tile-a); grid-column: 1 / -1; }
+  .tiles h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 1.3rem;
+    line-height: 1.1;
+    margin: 0 0 0.3rem;
+  }
+  .tiles p { margin: 0; font-size: 0.98rem; line-height: 1.4; }
+
+  /* Quest trail */
+  .trail { list-style: none; margin: 1rem 0 0; padding: 0; position: relative; }
+  .trail::before {
+    content: "";
+    position: absolute;
+    left: 1.4rem;
+    top: 1.6rem;
+    bottom: 1.6rem;
+    border-left: 3px dotted var(--lagoon);
+    opacity: 0.7;
+  }
+  .trail li {
+    display: grid;
+    grid-template-columns: 2.9rem 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.55rem 0;
+  }
+  .stop {
+    position: relative;
+    z-index: 1;
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+    background: var(--tile);
+    display: grid;
+    place-items: center;
+  }
+  .trail li:nth-child(1) .stop { --tile: var(--tile-a); }
+  .trail li:nth-child(2) .stop { --tile: var(--tile-b); }
+  .trail li:nth-child(3) .stop { --tile: var(--tile-c); }
+  .trail li:nth-child(4) .stop { --tile: var(--tile-d); }
+  .trail li:nth-child(5) .stop { --tile: var(--tile-a); }
+  .stop svg {
+    width: 1.55rem;
+    height: 1.55rem;
+    fill: none;
+    stroke: var(--tile-ink);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .trail .time {
+    display: block;
+    font-family: var(--display);
+    font-weight: 800;
+    color: var(--lagoon);
+    line-height: 1.2;
+  }
+  .trail .what { display: block; line-height: 1.45; }
+
+  /* Bingo */
+  .bingo-wrap {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .bingo-card { margin: 0; max-width: 20rem; justify-self: center; transform: rotate(1.2deg); }
+  .bingo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--card);
+    border: 2px solid var(--ink);
+    border-radius: 0.9rem;
+    box-shadow: 6px 6px 0 var(--lagoon);
+    overflow: hidden;
+  }
+  .bingo div {
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    padding: 0.35rem;
+    text-align: center;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.78rem;
+    line-height: 1.15;
+    border-right: 1px solid var(--mist);
+    border-bottom: 1px solid var(--mist);
+  }
+  .bingo div:nth-child(3n) { border-right: 0; }
+  .bingo div:nth-last-child(-n+3) { border-bottom: 0; }
+  .bingo .free {
+    background: var(--sun);
+    color: var(--tile-ink);
+    font-weight: 800;
+    font-size: 0.95rem;
+  }
+  .bingo-card figcaption {
+    margin-top: 0.85rem;
+    font-size: 0.9rem;
+    color: var(--faint);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .board-note { font-size: 0.95rem; color: var(--faint); }
+  .people { list-style: none; margin: 0 0 1rem; padding: 0; }
+  .people li { padding: 0.2rem 0; }
+  .people strong { font-family: var(--display); font-weight: 700; }
+
+  .eligibility {
+    border-left: 4px solid var(--sun);
+    padding: 0.25rem 0 0.25rem 1rem;
+  }
+
+  footer {
+    margin-top: 2rem;
+    padding: 1.75rem 0 3rem;
+    border-top: 1px solid var(--mist);
+    font-size: 0.98rem;
+    color: var(--faint);
+  }
+  footer p { max-width: none; margin-bottom: 0.4rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .drift li { animation: none; opacity: var(--end, 1); }
+  }
+  @media (min-width: 40rem) {
+    .wrap { padding: 0 1.5rem; }
+    .hero { padding-top: 4.5rem; }
+    .tiles { grid-template-columns: repeat(6, 1fr); }
+    .tiles li { grid-column: span 2; }
+    .tiles li:nth-child(4) { grid-column: 2 / span 2; }
+    .tiles li:nth-child(5) { grid-column: 4 / span 2; }
+    .bingo-wrap { grid-template-columns: 1.1fr 0.9fr; }
+    .bingo-card { max-width: none; justify-self: stretch; }
+  }
+  @media (max-width: 22rem) {
+    .tiles { grid-template-columns: 1fr; }
+    .tiles li:nth-child(5) { grid-column: auto; }
+  }
+</style>
+</head>
+<body>
+
+<svg class="bg" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="doodles" width="300" height="300" patternUnits="userSpaceOnUse" patternTransform="rotate(6)">
+      <!-- die -->
+      <g transform="translate(34 40) rotate(-12)">
+        <rect width="36" height="36" rx="8"/>
+        <circle cx="10" cy="10" r="2.5"/><circle cx="26" cy="10" r="2.5"/>
+        <circle cx="18" cy="18" r="2.5"/>
+        <circle cx="10" cy="26" r="2.5"/><circle cx="26" cy="26" r="2.5"/>
+      </g>
+      <!-- speech bubble -->
+      <g transform="translate(176 26)">
+        <path d="M0 10a10 10 0 0 1 10-10h40a10 10 0 0 1 10 10v22a10 10 0 0 1-10 10H26l-12 11v-11h-4A10 10 0 0 1 0 32z"/>
+        <text x="30" y="33" text-anchor="middle" font-size="26">?</text>
+      </g>
+      <!-- A to kana -->
+      <g transform="translate(40 150)">
+        <text x="0" y="28" font-size="30">A</text>
+        <path d="M34 20h26m-8-7l8 7-8 7"/>
+        <text x="68" y="28" font-size="28">あ</text>
+      </g>
+      <!-- trail with X -->
+      <g transform="translate(150 150)">
+        <path d="M0 70c28-40 52 20 80-12s32-40 54-20" stroke-dasharray="2 9"/>
+        <path d="M140 28l14 14m0-14l-14 14"/>
+      </g>
+      <!-- star -->
+      <g transform="translate(236 118)">
+        <path d="M14 0l4.2 9 9.8 1.2-7.2 6.7 1.9 9.7-8.7-4.9-8.7 4.9 1.9-9.7L0 10.2 9.8 9z"/>
+      </g>
+      <!-- pawn -->
+      <g transform="translate(96 220)">
+        <circle cx="12" cy="9" r="7"/>
+        <path d="M3 44q2-22 9-25 7 3 9 25z"/>
+      </g>
+      <!-- puzzle-ish tab -->
+      <g transform="translate(210 232)">
+        <path d="M0 6h14a6 6 0 1 1 12 0h14v14a6 6 0 1 0 0 12v14H0z"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#doodles)"/>
+</svg>
+
+<div class="wrap">
+
+  <header class="hero">
+    <ul class="drift" aria-hidden="true">
+      <li lang="ru">Потеряно в переводе</li>
+      <li lang="ja">翻訳で失われた</li>
+      <li lang="de">In der Übersetzung verloren</li>
+      <li lang="es">Perdido en la traducción</li>
+      <li lang="fr">Perdu dans la traduction</li>
+    </ul>
+    <h1>Lost in Translation, Found in Interdisciplinarity</h1>
+    <p class="sub">A playful evening for anyone curious about language and translation, human and artificial alike.</p>
+    <p class="when">Tuesday 8 December 2026, 7:00 to 9:00 PM
+      <span>Rooms C2.2 and C2.3, NeurIPS 2026, Sydney</span>
+    </p>
+
+    <div class="trivia-set">
+      <div class="trivia">
+        <span class="q-mark" aria-hidden="true">?</span>
+        <p class="q">What do schadenfreude, saudade, and komorebi have in common?</p>
+        <details>
+          <summary>Show the answer</summary>
+          <p>Each names a feeling or moment that English has no tidy single word for:</p>
+          <ul>
+            <li><strong>Schadenfreude</strong> (German): pleasure at someone else's misfortune. English just borrowed it.</li>
+            <li><strong>Saudade</strong> (Portuguese): a bittersweet longing for someone or something absent.</li>
+            <li><strong>Komorebi</strong> (Japanese): sunlight filtering through the leaves of trees.</li>
+          </ul>
+        </details>
+      </div>
+      <div class="trivia">
+        <span class="q-mark" aria-hidden="true">?</span>
+        <p class="q">Which Kafka did you mean?</p>
+        <details>
+          <summary>Show the answer</summary>
+          <p>It depends on your field. To a literature person, Kafka is the author of <em>The Metamorphosis</em>. To an engineer, it is the Apache streaming service that moves data around the cloud, named after him: its creator Jay Kreps has said he chose the name because the system is optimized for writing and he liked the author.</p>
+          <p>Same word, two fields, and a whole conversation can go sideways before anyone notices. ML has plenty more: <em>transformer</em>, <em>kernel</em>, <em>token</em>, <em>attention</em>, <em>python</em>.</p>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <p>Whatever your field, you've probably explained your work to someone outside it and watched something get lost along the way. Ever had an LLM misread you completely because of a quirk of language? Ever tried to translate a joke, an idiom, or a feeling between two languages you speak, and found it wouldn't cross over?</p>
+      <p>Often it is not a missing word but a shared one. The same term can mean two different things in two fields, and nobody notices until the conversation goes sideways.</p>
+      <p>This evening is for playing with those gaps, and for meeting people on the other side of them.</p>
+    </section>
+
+    <section>
+      <h2>What happens</h2>
+      <p>You team up with a few neighbors for a series of short, playful challenges that stretch how you explain, question, and think across fields. No expertise needed, and no one plays alone.</p>
+      <ul class="tiles">
+        <li><h3>Explain</h3><p>Make your work land with a new audience.</p></li>
+        <li><h3>Question</h3><p>Spot what each field takes for granted.</p></li>
+        <li><h3>Debate</h3><p>Find where fields disagree, and why.</p></li>
+        <li><h3>Translate</h3><p>Watch familiar words change meaning.</p></li>
+        <li><h3>Build</h3><p>Solve something none of you could alone.</p></li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="bingo-wrap">
+        <div>
+          <h2>Then, bingo</h2>
+          <p>Take your card and go find people you'd never have crossed paths with otherwise. You'll leave with sharper communication instincts, fresh ways of thinking across fields, and a handful of new contacts.</p>
+        </div>
+        <figure class="bingo-card">
+          <div class="bingo" aria-hidden="true">
+            <div>speaks more languages than you</div>
+            <div>works in a different field</div>
+            <div>has a favorite untranslatable word</div>
+            <div>has been lost in translation</div>
+            <div class="free">FREE</div>
+            <div>can explain it to a 5-year-old</div>
+            <div>posted a story to the board</div>
+            <div>has a word that means two things in their field</div>
+            <div>someone you'd never have met</div>
+          </div>
+          <figcaption>A sample card. Yours will have different squares.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>The story board</h2>
+      <p>All evening, anyone can post a short story to the board: an LLM that misunderstood you, a translation that went wrong, a time two fields used the same word for different things. Everyone can vote for their favorites. At the end we read the most-loved ones aloud and give their authors a shoutout. We will show you how on the night, and you can start thinking of yours now.</p>
+    </section>
+
+    <section>
+      <h2>The evening</h2>
+      <ol class="trail">
+        <li>
+          <span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><circle cx="15" cy="12.5" r="1"/></svg></span>
+          <div><span class="time">7:00</span><span class="what">Doors open, check-in, and a short welcome to set the tone.</span></div>
+        </li>
+        <li>
+          <span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21V3"/><path d="M6 4h12l-3 4.5 3 4.5H6"/></svg></span>
+          <div><span class="time">7:15</span><span class="what">The quest: small groups work through short challenges at their own pace.</span></div>
+        </li>
+        <li>
+          <span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M9.2 3.5v17M14.8 3.5v17M3.5 9.2h17M3.5 14.8h17"/></svg></span>
+          <div><span class="time">8:10</span><span class="what">Bingo: mingle one on one with people from other groups and fields.</span></div>
+        </li>
+        <li>
+          <span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-8l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M8 10h8"/></svg></span>
+          <div><span class="time">8:50</span><span class="what">Shoutouts: we read the most-loved stories from the story board.</span></div>
+        </li>
+        <li>
+          <span class="stop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V3"/><path d="M5 4h14v10H5z"/><path d="M5 9h14M10 4v10M15 4v10"/></svg></span>
+          <div><span class="time">9:00</span><span class="what">Closing. Take your new contacts and stories with you.</span></div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Who it's for</h2>
+      <p>Linguists, translators, MT and ML folks, and anyone with expertise in another area who wants to talk to people outside it. If you'd like to get better at explaining your work, thinking across fields, or just meeting curious people, you're in the right room.</p>
+    </section>
+
+    <section>
+      <h2>Who can come</h2>
+      <p class="eligibility">Anyone with a NeurIPS 2026 main conference or tutorial registration. There is no separate sign-up for this event, so just show up.</p>
+    </section>
+
+    <section>
+      <h2>Want to chip in beforehand?</h2>
+      <p>Got a story for the board, an idea for a challenge or bingo square, or want to help on the night? Write to Lana, one of the organizers, at <a href="mailto:sveta.sodol@gmail.com">sveta.sodol@gmail.com</a>. This is only for contributions. You do not need to email anyone to attend.</p>
+    </section>
+
+    <section>
+      <h2>Organizers</h2>
+      <ul class="people">
+        <li><strong>Svetlana Sodol</strong></li>
+        <li><strong>Alexey Vlaskin</strong></li>
+        <li><strong>Zhiqin Yang</strong></li>
+        <li><strong>Ekaterina Artemova</strong></li>
+        <li><strong>Aleksandr Petiushko</strong></li>
+      </ul>
+      <p>Zhiqin Yang also organizes the <a href="https://lp4fm.github.io/">Workshop on Linguistic Principles for Foundation Models (LP4FM)</a> at NeurIPS 2026 in Sydney, on Saturday 12 December, a few days after this evening. If this sounds like your kind of thing, the workshop probably will too.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>An official NeurIPS 2026 social.</p>
+    <p><a href="https://neurips.cc/virtual/2026/social/180826">See the listing on neurips.cc</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
